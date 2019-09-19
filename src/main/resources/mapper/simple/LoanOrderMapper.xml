@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.demo.mapper.simple.LoanOrderMapper">
+
+    <resultMap id="BaseResultMap" type="com.demo.model.LoanOrder">
+        <id column="id" jdbcType="VARCHAR" property="id"/>
+        <result column="loan_mer_name" jdbcType="VARCHAR" property="loanMerName"/>
+ 
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,
+        loan_mer_name    
+    </sql>
+
+    <sql id="Group_Column_List">
+    	a.id,
+        a.mer_id,
+        a.merchant_code,
+        a.agent_id,
+        a.channel_id,
+        a.channel_code,
+        a.app_id,
+        a.app_code,
+        a.order_no,
+        a.outer_order_no,
+        a.status,
+        a.bank_card_no,
+        a.bank_name,
+        a.loan_mer_name,
+        a.loan_id_card_no,
+        a.loan_mobile,
+        a.apply_amount,
+        a.apply_day,
+        a.approve_mode,
+        a.actual_amount,
+        a.repayment_amount,
+        a.handling_cost,
+        a.service_cost,
+        a.information_cost,
+        a.comprehensive_cost,
+        a.interest_per_cost,
+        a.interest_cost,
+        a.overdue_money,
+        a.late_amount,
+        a.hanyin_service_fee_profit,
+        a.third_service_fee_profit,
+        a.hanyin_interest_profit,
+        a.third_interest_profit,
+        a.month_principal_interest_sum,
+        a.fee_rate_in_year,
+        a.service_fee_rate,
+        a.apply_time,
+        a.actual_time,
+        a.retry_num,
+        a.create_time,
+        a.update_time,
+        a.version_num,
+        a.del_flag,
+        a.hanyin_service_fee,
+        a.third_service_fee,
+        a.interest_rate,
+        a.hanyin_interest_rate,
+        a.third_interest_rate,
+        a.poundage_rate,
+        a.info_fee,
+        a.late_rate,
+        a.overdue_rate,
+        a.actual_periods,
+        a.with_holding,
+        a.with_num,
+        a.loan_number,
+        a.source,
+        a.operator,
+        a.special_desc,
+        a.repay_status,
+        a.repay_type,
+        data_batch_time
+    </sql>
+
+    <select id="findprimaryId" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from t_dpay_loan_order
+        where id = #{orderId,jdbcType=VARCHAR}
+    </select>
+    
+</mapper>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.demo.mapper.simple.Testtablemapper">
+	<resultMap id="baseresultmap" type="com.demo.model.simple.Testtable">
+		<id column="id" jdbcType="VARCHAR" property="id" />
+		<result column="username" jdbcType="VARCHAR" property="username" />
+		<result column="userpass" jdbcType="VARCHAR" property="userpass" />
+		<result column="order_id" jdbcType="VARCHAR" property="orderid" />
+
+
+	</resultMap>
+
+	<sql id="fourcolumn_list">
+        id,username,userpass,order_id
+
+
+	</sql>
+        <select id="selectbyid" parameterType="java.lang.String" resultMap="baseresultmap">
+        select
+        <include refid="fourcolumn_list"/>
+        from testtable
+        where id = #{id,jdbcType=VARCHAR}
+    </select>
+
+
+
+
+
+
+</mapper>
