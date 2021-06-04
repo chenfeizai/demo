@@ -22,7 +22,7 @@
 
 		<main.basedir>${basedir}/../..</main.basedir>
 		<m2eclipse.wtp.contextRoot>/</m2eclipse.wtp.contextRoot>
-		<httpclient.base.version>4.5.3</httpclient.base.version>
+		<httpclient.base.version>4.5.13</httpclient.base.version>
         <httpmime.base.version>4.4</httpmime.base.version>
         <httpcomponents.base.version>4.3.5</httpcomponents.base.version>
         
